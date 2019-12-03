@@ -4,7 +4,7 @@ n, k = map(int, input().split())
 scores = list(map(int, input().split()))
 
 advancer_count = 0
-for i, score in enumerate(scores):
+for score in scores:
   if score > 0 and score >= scores[k - 1]:
     advancer_count += 1
 
