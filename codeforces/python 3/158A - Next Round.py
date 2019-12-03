@@ -5,7 +5,9 @@ scores = list(map(int, input().split()))
 
 advancer_count = 0
 for score in scores:
-  if score > 0 and score >= scores[k - 1]:
-    advancer_count += 1
+  if score is 0 or score < scores[k - 1]:
+    break
+
+  advancer_count += 1
 
 print(advancer_count)
