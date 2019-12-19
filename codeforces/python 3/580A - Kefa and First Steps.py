@@ -3,19 +3,10 @@
 _ = input()
 nums = list(map(int, input().split()))
 
-max_len = i = 0
-while i < len(nums):
-  current = nums[i]
-
-  sub_len = 1
-  for j in range(i + 1, len(nums)):
-    if current > nums[j]:
-      break
-
-    current = nums[j]
-    sub_len += 1
-
+max_len = sub_len = prev_num = 0
+for num in nums:
+  sub_len = sub_len + 1 if prev_num <= num else 1
   max_len = max(max_len, sub_len)
-  i += sub_len
+  prev_num = num
 
 print(max_len)
