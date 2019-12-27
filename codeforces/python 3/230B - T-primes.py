@@ -4,7 +4,7 @@ _ = input()
 x = map(int, input().split())
 
 limit = int(1000000000000 ** .5) + 1
-primes = [False] * 2 + [True] * limit
+primes = [False] * 2 + [True] * (limit - 2)
 for i in range(2, limit):
   if primes[i]:
     for j in range(i ** 2, limit, i):
