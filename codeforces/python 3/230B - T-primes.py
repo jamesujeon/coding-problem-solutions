@@ -3,13 +3,13 @@
 _ = input()
 x = map(int, input().split())
 
-limit = 1000001
-table = [1] * 2 + [0] * limit
+limit = int(1000000000000 ** .5) + 1
+table = [0] * 2 + [1] * limit
 for i in range(2, limit):
-  if not table[i]:
+  if table[i]:
     for j in range(i ** 2, limit, i):
-      table[j] = 1
+      table[j] = 0
 
 for num in x:
   sqrt = int(num ** .5)
-  print("NO" if table[sqrt] or sqrt ** 2 != num else "YES")
+  print("YES" if table[sqrt] and sqrt ** 2 == num else "NO")
