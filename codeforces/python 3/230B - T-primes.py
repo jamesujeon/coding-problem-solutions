@@ -4,12 +4,12 @@ _ = input()
 x = map(int, input().split())
 
 limit = int(1000000000000 ** .5) + 1
-table = [0] * 2 + [1] * limit
+primes = [False] * 2 + [True] * limit
 for i in range(2, limit):
-  if table[i]:
+  if primes[i]:
     for j in range(i ** 2, limit, i):
-      table[j] = 0
+      primes[j] = False
 
 for num in x:
   sqrt = int(num ** .5)
-  print("YES" if table[sqrt] and sqrt ** 2 == num else "NO")
+  print("YES" if primes[sqrt] and sqrt ** 2 == num else "NO")
