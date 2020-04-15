@@ -17,6 +17,7 @@ def is_valid(y, x):
     si = x + y - i
     if si < n and b[i][si]:
       return False
+
   return True
 
 def bt(y):
@@ -31,17 +32,9 @@ def bt(y):
       bt(y + 1)
       b[y][i] = False
 
-# 대칭 구조이므로 절반의 해에 2배를 곱해 구할 수 있다.
-# 홀수인 경우, 홀수에 해당하는 경우를 추가적으로 구해야 한다.
-# (수행 시간이 약 절반으로 줄어든다.)
-for i in range(n // 2):
+for i in range(n):
   b[0][i] = True
   bt(1)
   b[0][i] = False
-
-c *= 2
-if n % 2:
-  b[0][n // 2 + 1] = True
-  bt(1)
 
 print(c)
