@@ -14,5 +14,7 @@ class Solution:
                     prev.next = curr.next
                 else:
                     head = curr.next
-            prev, curr = curr, curr.next
+            else:
+                prev = curr
+            curr = curr.next
         return head
