@@ -1,0 +1,8 @@
+-- 문제 링크: https://programmers.co.kr/learn/courses/30/lessons/62284
+
+SELECT CART_ID
+FROM CART_PRODUCTS
+GROUP BY CART_ID
+HAVING GROUP_CONCAT(NAME) LIKE '%Milk%'
+   AND GROUP_CONCAT(NAME) LIKE '%Yogurt%'
+ORDER BY CART_ID ASC
