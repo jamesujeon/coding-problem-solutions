@@ -25,18 +25,18 @@ class Queue:
 import sys
 input = sys.stdin.readline
 
-stack = Queue()
+queue = Queue()
 for _ in range(int(input())):
     commands = input().split()
     if commands[0] == 'push':
-        stack.push(int(commands[1]))
+        queue.push(int(commands[1]))
     elif commands[0] == 'pop':
-        print(stack.pop())
+        print(queue.pop())
     elif commands[0] == 'size':
-        print(stack.size())
+        print(queue.size())
     elif commands[0] == 'empty':
-        print(1 if stack.empty() else 0)
+        print(1 if queue.empty() else 0)
     elif commands[0] == 'front':
-        print(stack.front())
+        print(queue.front())
     elif commands[0] == 'back':
-        print(stack.back())
+        print(queue.back())
