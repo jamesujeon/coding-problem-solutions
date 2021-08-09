@@ -2,7 +2,8 @@
 
 N = int(input())
 
-for M in range(N - len(str(N)) * 9, N + 1):
+
+for M in range(max(N - len(str(N)) * 9, 1), N + 1):
     if M + sum(map(int, str(M))) == N:
         print(M)
         break
