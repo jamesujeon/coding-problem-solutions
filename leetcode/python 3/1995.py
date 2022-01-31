@@ -2,10 +2,11 @@
 
 class Solution:
     def countQuadruplets(self, nums: List[int]) -> int:
-        return sum(
-            nums[a] + nums[b] + nums[c] == nums[d]
-            for a in range(len(nums) - 3)
-            for b in range(a + 1, len(nums) - 2)
-            for c in range(b + 1, len(nums) - 1)
-            for d in range(c + 1, len(nums))
-        )
+        count, sums = 0, {}
+        for b in range(1, len(nums) - 2):
+            for a in range(b):
+                sums[nums[a] + nums[b]] = sums.get(nums[a] + nums[b], 0) + 1
+            for d in range(b + 2, len(nums)):
+                count += sums.get(nums[d] - nums[b + 1], 0)
+
+        return count
