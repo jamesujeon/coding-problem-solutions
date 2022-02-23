@@ -4,4 +4,4 @@ import re
 
 class Solution:
     def countValidWords(self, sentence: str) -> int:
-        return sum(re.match("^([a-z]+(-?[a-z]+)?)?(!|\.|,)?$", word) is not None for word in sentence.split())
+        return sum(1 for word in sentence.split() if re.match("^([a-z]+(-?[a-z]+)?)?[!.,]?$", word))
