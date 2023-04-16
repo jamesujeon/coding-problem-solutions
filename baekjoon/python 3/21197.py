@@ -1,4 +1,4 @@
-# 문제 링크: https://www.acmicpc.net/problem/21185
+# 문제 링크: https://www.acmicpc.net/problem/21197
 
 import sys
 input = sys.stdin.readline
