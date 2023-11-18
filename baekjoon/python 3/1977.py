@@ -1,6 +1,8 @@
 # 문제 링크: https://www.acmicpc.net/problem/1977
 
-n = [i for i in range(int(input()), int(input()) + 1) if int(i**.5)**2 == i]
+M, N = int(input()), int(input())
+
+n = [i * i for i in range(int(M**.5) + int(int(M**.5)**2 != M), int(N**.5) + 1)]
 
 if n:
     print(sum(n))
