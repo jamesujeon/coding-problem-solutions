@@ -5,5 +5,5 @@ input = sys.stdin.readline
 
 for _ in range(int(input())):
     s = input().strip()
-    if all(c.isdigit() for c in s[:4] + s[5:]) and s[0] == s[1] and s[4].isupper():
+    if all(c in '123456789' for c in s[:4] + s[5:]) and s[0] == s[1] and s[4].isupper():
         print(s)
